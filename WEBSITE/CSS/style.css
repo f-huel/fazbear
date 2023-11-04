@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    background-color: #333;
+}
+
+li a {
+    display: block;
+    padding: 30px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+}
+
+.section {
+    margin-left: 10%;
+    padding: 20px;
+    height: 600px;
+}
+
+#home {
+    background-color: #f5f5f5;
+}
+
+#events {
+    background-color: #f5f5f5;
+}
+
+#vacancies {
+    background-color: #f5f5f5;
+}
+
+#contact {
+    background-color: #f5f5f5;
+}
+
+nav a.active {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.text {
+    margin-top: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 10px auto;
+}
+
+th,
+td {
+    border: 1px solid #f5f5f5;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #333;
+}
+
+.link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+form {
+    margin: 15px auto;
+    width: 60%;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+form label {
+    display: block;
+    margin-top: 9px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-top: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form textarea {
+    height: 50px;
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+.contact-form {
+    flex: 1;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    
+    .contact-form {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.ideas-form {
+    flex: 1;
+    margin: 20px 10px;
+}
+
+.button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 10px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #aaa;
+}
+
+.home-text {
+    margin: 15px auto;
+    width: 60%;
+    text-align: center;
+    padding: 20px;
+}
