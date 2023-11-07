@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    background-color: #333;
+}
+
+.section {
+    margin-left: 10%;
+    padding: 20px;
+    height: 600px;
+}
+
+#edit {
+    background-color: #f5f5f5;
+}
+
+.button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #aaa;
+}
+
+.form {
+    margin: 10px auto;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.label {
+    display: block;
+    margin-top: 9px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input {
+    width: 95%;
+    padding: 10px;
+    margin-top: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form textarea {
+    height: 50px;
+}

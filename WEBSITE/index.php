@@ -4,7 +4,7 @@ include 'connection.php';
 
 try {
 
-    $query_events = "SELECT event_title, event_date, event_time, id FROM events";
+    $query_events = "SELECT event_title, event_date, event_time, event_description, id FROM events";
     $result_events = $pdo->query($query_events)->fetchAll();
 
     $query_contact = "INSERT INTO contact (name_form, email_form, phone_form, message_form) VALUES (?, ?, ?, ?)";
@@ -26,7 +26,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>FAZBEAR</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -34,7 +34,7 @@ try {
 
     <nav>
         <ul>
-            <li><img src="images/fnaflogo.png" alt="" width="190" height="190"></li>
+            <li><img src="images/fnaflogo.png" alt="logo" width="190" height="190"></li>
             <li><a href="#home">HOME</a></li>
             <li><a href="#events">EVENTS</a></li>
             <li><a href="#vacancies">VACANCIES</a></li>
@@ -45,9 +45,9 @@ try {
     <div class="section" id="home">
         <h1>HOME</h1>
         <br>
-        <h3>
-            Welcome To Freddy Fazbear's Pizza. A Magical Place For Kids And Grownups Alike, Where Fantasy And Fun Come To Life.
-        </h3>
+        <a href="#"><img src="images/pizzeria.png" alt="pizzeria logo" href="" width="250" height="250"></a>
+        
+        
     </div>
 
     <div class="section" id="events">
@@ -59,6 +59,7 @@ try {
                 <th class="text">Date</th>
                 <th class="text">Time</th>
                 <th class="text">Details</th>
+                <th class="text">Edit</th>
             </tr>
 
             <?php
@@ -69,7 +70,8 @@ try {
                     <td class="text"><?= $result_events[$i]['event_title'] ?></td>
                     <td class="text"><?= $result_events[$i]['event_date'] ?></td>
                     <td class="text"><?= $result_events[$i]['event_time'] ?></td>
-                    <td class="text"><button name="id" type="submit" value="<?= $result_events[$i]['id'] ?>">See Details</button></td>
+                    <td class="text"><?= $result_events[$i]['event_description'] ?></td>
+                    <td class="text"><a href="edit.php?id=<?= $result_events[$i]['id'] ?>" class="button-table">Edit</a></td>
                 </tr>
 
                 <?php
@@ -78,6 +80,15 @@ try {
             ?>
 
         </table>
+
+        <div style="text-align: center;">
+        <form action="add.php" method="get">
+            <input type="hidden">
+            <button type="submit" class="button">Add Event</button>
+        </form>
+    </div>
+
+        <br>
 
     </div>
 

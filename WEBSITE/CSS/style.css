@@ -57,7 +57,7 @@ nav a.active {
 
 table {
     border-collapse: collapse;
-    width: 70%;
+    width: 80%;
     margin: 10px auto;
 }
 
@@ -76,12 +76,10 @@ td {
 }
 
 form {
-    margin: 15px auto;
+    margin: 10px auto;
     width: 60%;
     text-align: center;
     padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
 }
 
 form label {
@@ -110,7 +108,7 @@ form input[type="submit"] {
     background-color: #333;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 20px;
     margin: 20px auto;
     cursor: pointer;
     border-radius: 5px;
@@ -120,9 +118,14 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     background-color: #555;
 }
+
 .contact-form {
-    flex: 1;
-    margin: 0 10px;
+    margin: 15px auto;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
 }
 
 @media (max-width: 768px) {
@@ -139,8 +142,8 @@ form input[type="submit"]:hover {
 }
 
 .button {
-    background-color: #fff;
-    color: #333;
+    background-color: #333;
+    color: #fff;
     border: none;
     padding: 10px 10px;
     margin: 20px auto;
@@ -150,7 +153,7 @@ form input[type="submit"]:hover {
 }
 
 .button:hover {
-    background-color: #aaa;
+    background-color: #ccc;
 }
 
 .home-text {
@@ -158,4 +161,20 @@ form input[type="submit"]:hover {
     width: 60%;
     text-align: center;
     padding: 20px;
+}
+
+.button-table {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 10px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #aaa;
 }
