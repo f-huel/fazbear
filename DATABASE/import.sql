@@ -8,14 +8,15 @@ CREATE TABLE `vacancies` (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     job_title VARCHAR(150) NOT NULL,
     job_payment DECIMAL(10,2) NOT NULL DEFAULT 0,
-    job_description TEXT NOT NULL
+    job_description TEXT NOT NULL,
+    job_availability BOOLEAN NOT NULL DEFAULT 0
 );
 
-INSERT INTO `vacancies` (`job_title`, `job_payment`, `job_description`) VALUES
-('Night Guard', 4.00, 'You will be working a shift from 12:00am to 06:00am. You will monitor cameras, ensure the safety of equipment and animatronic characters.'),
-('Chef', 8.00, 'You will be working from 09:00am to 11:00pm. You will be preparing food and drinks for the visitors and staff.'),
-('Cashier', 6.00, 'You will be working from 09:00am to 11:00pm. You will be handling the cash register.'),
-('Mechanic', 10.00, 'You will be working from 09:00am to 11:00pm. You will be repairing the animatronic characters and equipment.');
+INSERT INTO `vacancies` (`job_title`, `job_payment`, `job_description`, `job_availability`) VALUES
+('Night Guard', 4.00, 'You will be working a shift from 12:00am to 06:00am. You will monitor cameras, ensure the safety of equipment and animatronic characters.', true),
+('Chef', 8.00, 'You will be working from 09:00am to 11:00pm. You will be preparing food and drinks for the visitors and staff.', false),
+('Cashier', 6.00, 'You will be working from 09:00am to 11:00pm. You will be handling the cash register.', false),
+('Mechanic', 10.00, 'You will be working from 09:00am to 11:00pm. You will be repairing the animatronic characters and equipment.', false);
 
 CREATE TABLE `contact` (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

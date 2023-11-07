@@ -61,6 +61,10 @@ table {
     margin: 10px auto;
 }
 
+table:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 th,
 td {
     border: 1px solid #f5f5f5;
@@ -98,6 +102,7 @@ form textarea {
     margin-top: 3px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    
 }
 
 form textarea {
@@ -128,6 +133,10 @@ form input[type="submit"]:hover {
     background-color: #f9f9f9;
 }
 
+.contact-form:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 @media (max-width: 768px) {
     
     .contact-form {
@@ -156,11 +165,10 @@ form input[type="submit"]:hover {
     background-color: #ccc;
 }
 
-.home-text {
+.home {
     margin: 15px auto;
     width: 60%;
     text-align: center;
-    padding: 20px;
 }
 
 .button-table {
@@ -177,4 +185,57 @@ form input[type="submit"]:hover {
 
 .button:hover {
     background-color: #aaa;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    gap: 20px;
+}
+
+.card-row {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.vacancy-card {
+    transition: 0.3s;
+    width: 45%;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+.vacancy-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.apply-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.apply-button:hover {
+    background-color: #888;
+}
+
+.disabled-button {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
 }
