@@ -55,7 +55,7 @@ if (isset($_GET['id'])) {
 
     <form method="post" class="form">
         <input type="hidden" name="id" value="<?= $id ?>">
-        
+
         <label for="new_title" class="label">Title:</label>
         <input type="text" name="new_title" value="<?= $events['event_title'] ?>" class="input"><br>
 
@@ -68,7 +68,7 @@ if (isset($_GET['id'])) {
         <label for="new_description" class="label">Description:</label>
         <textarea name="new_description" id="new_description" cols="30" rows="10" class="input"><?= $events['event_description'] ?></textarea><br>
 
-        <input type="submit" value="Save" class="button">
+        <input type="submit" value="SAVE" class="button">
     </form>
     </div>
 

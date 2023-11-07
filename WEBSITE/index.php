@@ -71,7 +71,7 @@ try {
                     <td class="text"><?= $result_events[$i]['event_date'] ?></td>
                     <td class="text"><?= $result_events[$i]['event_time'] ?></td>
                     <td class="text"><?= $result_events[$i]['event_description'] ?></td>
-                    <td class="text"><a href="edit.php?id=<?= $result_events[$i]['id'] ?>" class="button-table">Edit</a></td>
+                    <td class="text"><a href="edit.php?id=<?= $result_events[$i]['id'] ?>" class="button-table">EDIT</a></td>
                 </tr>
 
                 <?php
@@ -84,7 +84,7 @@ try {
         <div style="text-align: center;">
         <form action="add.php" method="get">
             <input type="hidden">
-            <button type="submit" class="button">Add Event</button>
+            <button type="submit" class="button">ADD EVENT</button>
         </form>
     </div>
 
