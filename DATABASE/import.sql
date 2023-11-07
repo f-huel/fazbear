@@ -13,10 +13,7 @@ CREATE TABLE `vacancies` (
 
 INSERT INTO `vacancies` (`job_title`, `job_payment`, `job_description`) VALUES
 ('Night Guard', 4.00, 'You will be working a shift from 12:00am to 06:00am. You will monitor cameras, ensure the safety of equipment and animatronic characters.'),
-('Security', 9.00, 'You will be working from 06:00am to 12:00am. You will monitor cameras, ensure the safety of equipment, animatronic characters and the visitors.'),
 ('Chef', 8.00, 'You will be working from 09:00am to 11:00pm. You will be preparing food and drinks for the visitors and staff.'),
-('Waiter', 6.00, 'You will be working from 09:00am to 11:00pm. You will be serving food and drinks to the visitors.'),
-('Cleaner', 2.00, 'You will be working from 09:00am to 11:00pm. You will be cleaning the restaurant and animatronic characters.'),
 ('Cashier', 6.00, 'You will be working from 09:00am to 11:00pm. You will be handling the cash register.'),
 ('Mechanic', 10.00, 'You will be working from 09:00am to 11:00pm. You will be repairing the animatronic characters and equipment.');
 
