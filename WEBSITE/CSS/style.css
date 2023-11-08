@@ -56,6 +56,7 @@ nav a.active {
 }
 
 table {
+    transition: 0.3s;
     border-collapse: collapse;
     width: 80%;
     margin: 10px auto;
@@ -125,6 +126,7 @@ form input[type="submit"]:hover {
 }
 
 .contact-form {
+    transition: 0.3s;
     margin: 15px auto;
     width: 50%;
     text-align: center;
@@ -175,8 +177,8 @@ form input[type="submit"]:hover {
     background-color: #fff;
     color: #333;
     border: none;
-    padding: 10px 10px;
-    margin: 20px auto;
+    padding: 5px;
+    margin: 10px auto;
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;

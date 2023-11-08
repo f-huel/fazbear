@@ -46,7 +46,7 @@ try {
     <div class="section" id="home">
         <h1>HOME</h1>
         <br>
-        <a href="#"><img src="images/pizzeria.png" alt="pizzeria logo" href="" width="250" height="250" class="image"></a>
+        <a href="location.php"><img src="images/pizzeria.png" alt="pizzeria logo" href="" width="250" height="250" class="image"></a>
         
         
     </div>
