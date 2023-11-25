@@ -39,3 +39,25 @@ CREATE TABLE `events` (
 
 INSERT INTO `events` (`event_title`, `event_date`, `event_time`, `event_description`) VALUES
 ('Freddy Fazbear Pizzeria Grand Opening', '1973-01-01', '12:00:00', 'Come visit the Pizzeria at the grand opening, it will be a big party!');
+
+CREATE TABLE `applications` (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    vacancy_id INT,
+    applicant_name VARCHAR(255) NOT NULL,
+    applicant_email VARCHAR(255) NOT NULL,
+    motivation_letter TEXT NOT NULL,
+    application_date DATE NOT NULL,
+    FOREIGN KEY (vacancy_id) REFERENCES `vacancies`(id)
+);
+
+INSERT INTO `applications` (`vacancy_id`, `applicant_name`, `applicant_email`, `motivation_letter`, `application_date`) VALUES
+(1, 'John Doe', 'john@doe.com', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', '2021-01-01');
+
+CREATE TABLE `users` (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(150) NOT NULL,
+    password VARCHAR(150) NOT NULL
+);
+
+INSERT INTO `users` (`username`, `password`) VALUES
+('admin', 'admin');

@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'fazbear';
-$username = 'bit_academy'; // change if needed
-$password = 'bit_academy'; // change if needed
+$username = 'bit_academy';
+$password = 'bit_academy';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

@@ -2,29 +2,38 @@
 
 include 'connection.php';
 
-$query_add = "INSERT INTO events (event_title, event_date, event_time, event_description) VALUES (?, ?, ?, ?)";
+if (isset($_POST['add'])) {
+    $query_add = "INSERT INTO events (event_title, event_date, event_time, event_description) VALUES (?, ?, ?, ?)";
     $stmt = $pdo->prepare($query_add);
-    if (isset($_POST['add'])) {
-        $stmt->execute([$_POST['event_title'], $_POST['event_date'], $_POST['event_time'], $_POST['event_description']]);
-        header("Location: index.php");
-        exit();
-    }
+
+    $stmt->bindParam(1, $_POST['event_title']);
+    $stmt->bindParam(2, $_POST['event_date']);
+    $stmt->bindParam(3, $_POST['event_time']);
+    $stmt->bindParam(4, $_POST['event_description']);
+
+    $stmt->execute();
+
+    header("Location: index.php");
+    exit();
+}
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Images/fnaflogo.png">
     <title>FAZBEAR ADD</title>
     <link rel="stylesheet" href="css/edit.css">
 </head>
 <body>
 
-<nav>
+    <nav>
         <ul>
-            <li><img src="images/fnaflogo.png" alt="" width="190" height="190"></li>
+        <li><a class="navbar-brand" href="index.php"><img src="Images/fnaflogo.png" alt="logo" width="150" height="150"></a></li>
         </ul>
     </nav>
 
