@@ -110,3 +110,19 @@ nav ul li a:hover:after {
 form textarea {
     height: 50px;
 }
+
+.button-delete {
+    background-color: #ff0000;
+    color: #000;
+    border: none;
+    padding: 5px;
+    margin: 10px auto;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.button-delete:hover {
+    background-color: #ff5e5e;
+}
