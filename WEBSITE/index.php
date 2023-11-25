@@ -54,7 +54,7 @@ try {
 
 <body class="body">
 
-    <audio muted autoplay loop>
+    <audio autoplay loop>
         <source src="Sounds/main.mp3" type="audio/mp3">
     </audio>
 
