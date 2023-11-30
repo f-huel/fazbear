@@ -60,4 +60,4 @@ CREATE TABLE `users` (
 );
 
 INSERT INTO `users` (`username`, `password`) VALUES
-('admin', 'admin');
+('admin', '$2y$10$h5nkfKriCxF.RjdF98Q6COkjOt6YknNIxEDubpHz86QMIuvQfnMBe');

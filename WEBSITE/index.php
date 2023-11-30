@@ -60,18 +60,18 @@ try {
 
     <nav class="stroke navbar">
         <div class="container-fluid">
-                <ul>
-                    <li><a class="navbar-brand" href="index.php"><img src="Images/fnaflogo.png" alt="logo" width="150" height="150"></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#events">EVENTS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#vacancies">VACANCIES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+            <ul>
+                <li><a class="navbar-brand" href="index.php"><img src="Images/fnaflogo.png" alt="logo" width="150" height="150"></a></li>
+                <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="#events">EVENTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#vacancies">VACANCIES</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+                <?php if ($isLoggedIn) : ?>
+                    <li class="nav-item"><a class="nav-link" href="?logout=true">LOGOUT</a></li>
+                <?php else : ?>
                     <li class="nav-item"><a class="nav-link" href="login.php">LOGIN</a></li>
-                    <?php if ($isLoggedIn) : ?>
-                        <li class="nav-item"><a class="nav-link" href="?logout=true">LOGOUT</a></li>
-                    <?php endif; ?>
-
-                </ul>
+                <?php endif; ?>
+            </ul>
         </div>
     </nav>
 
@@ -91,10 +91,10 @@ try {
                 <th class="text th">Date</th>
                 <th class="text th">Time</th>
                 <th class="text th">Details</th>
-            <?php if ($isLoggedIn) : ?>
-                <th class="text th">Edit</th>
-                <th class="text th">Delete</th>
-            <?php endif; ?>
+                <?php if ($isLoggedIn) : ?>
+                    <th class="text th">Edit</th>
+                    <th class="text th">Delete</th>
+                <?php endif; ?>
             </tr>
 
             <?php
@@ -106,29 +106,29 @@ try {
                     <td class="text td"><?= $result_events[$i]['event_date'] ?></td>
                     <td class="text td"><?= $result_events[$i]['event_time'] ?></td>
                     <td class="text td"><?= $result_events[$i]['event_description'] ?></td>
-                <?php if ($isLoggedIn) : ?>
-                    <td class="text td"><a href="edit.php?id=<?= $result_events[$i]['id'] ?>" class="button-edit">EDIT</a></td>
-                    <td class="text td">
-                        <form action="index.php" method="get" onsubmit="return confirm('Are you sure you want to delete this event?')">
-                            <input type="hidden" name="delete_event" value="<?= $eventId ?>">
-                            <button type="submit" class="button-delete">DELETE</button>
-                        </form>
-                    </td>
-                <?php endif; ?>
+                    <?php if ($isLoggedIn) : ?>
+                        <td class="text td"><a href="edit.php?id=<?= $result_events[$i]['id'] ?>" class="button-edit">EDIT</a></td>
+                        <td class="text td">
+                            <form action="index.php" method="get" onsubmit="return confirm('Are you sure you want to delete this event?')">
+                                <input type="hidden" name="delete_event" value="<?= $eventId ?>">
+                                <button type="submit" class="button-delete">DELETE</button>
+                            </form>
+                        </td>
+                    <?php endif; ?>
                 </tr>
             <?php
             }
             ?>
         </table>
 
-    <?php if ($isLoggedIn) : ?>
-        <div style="text-align: center;">
-            <form action="add.php" method="get">
-                <input type="hidden">
-                <button type="submit" class="button">ADD EVENT</button>
-            </form>
-        </div>
-    <?php endif; ?>
+        <?php if ($isLoggedIn) : ?>
+            <div style="text-align: center;">
+                <form action="add.php" method="get">
+                    <input type="hidden">
+                    <button type="submit" class="button">ADD EVENT</button>
+                </form>
+            </div>
+        <?php endif; ?>
 
         <br>
 

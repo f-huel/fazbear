@@ -63,6 +63,24 @@ nav ul li a:hover:after {
     background-color: #f5f5f5;
 }
 
+.table {
+    transition: 0.3s;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.table:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.th,
+.td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
 .button {
     background-color: #333;
     color: #fff;

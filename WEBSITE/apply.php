@@ -34,7 +34,7 @@ if ($isLoggedIn && isset($_GET['vacancy_id'])) {
     $vacancyId = $_GET['vacancy_id'];
 
     try {
-        $query_applications = "SELECT id, applicant_name, applicant_email, motivation_letter, application_date FROM applications WHERE vacancy_id = ?";
+        $query_applications = "SELECT * FROM applications WHERE vacancy_id = ?";
         $stmt_applications = $pdo->prepare($query_applications);
         $stmt_applications->execute([$vacancyId]);
         $applications = $stmt_applications->fetchAll();
@@ -43,16 +43,22 @@ if ($isLoggedIn && isset($_GET['vacancy_id'])) {
     }
 }
 
-if (isset($_GET['delete_applications'])) {
-    $deleteapplicationsId = $_GET['delete_applications'];
-    $query_delete_applications = "DELETE FROM applications WHERE id = ?";
-    $stmt_delete_applications = $pdo->prepare($query_delete_applications);
-    $stmt_delete_applications->execute([$deleteapplicationsId]);
-    header("Location: apply.php");
-    exit();
+if (isset($_GET['delete_app'])) {
+    $deleteAppId = $_GET['delete_app'];
+    try {
+        $query_delete_app = "DELETE FROM applications WHERE id = ?";
+        $stmt_delete_app = $pdo->prepare($query_delete_app);
+        $stmt_delete_app->execute([$deleteAppId]);
+        header("Location: index.php");
+        exit();
+    } catch (PDOException $e) {
+        echo "Failed to delete application: " . $e->getMessage();
+    }
 }
 
-function getJobTitle($vacancyId) {
+
+function getJobTitle($vacancyId)
+{
     global $pdo;
     $query_title = "SELECT job_title FROM vacancies WHERE id = ?";
     $stmt_title = $pdo->prepare($query_title);
@@ -84,21 +90,39 @@ function getJobTitle($vacancyId) {
     <?php if ($isLoggedIn && isset($applications)) : ?>
         <div class="applications-list">
             <h1>Applications for <?= isset($applications) ? htmlspecialchars(getJobTitle($_GET['vacancy_id'])) : 'Vacancy' ?></h1>
-            <ul>
-                <?php foreach ($applications as $application) : ?>
-                    <div>
-                        <strong><?= $application['applicant_name'] ?></strong>
-                        <p>Email: <?= $application['applicant_email'] ?></p>
-                        <p>Motivation Letter: <?= $application['motivation_letter'] ?></p>
-                        <p>Application Date: <?= $application['application_date'] ?></p>
 
-                        <form action="index.php" method="get" onsubmit="return confirm('Are you sure you want to delete this application?')">
-                            <input type="hidden" name="delete_applications" value="<?= $application['id'] ?>">
-                            <button type="submit" class="button-delete">DELETE</button>
-                        </form>
-                    </div>
-                <?php endforeach; ?>
-            </ul>
+            <table class="table" style="align-items: center;">
+                <tr>
+                    <th class="text th">Name</th>
+                    <th class="text th">Email</th>
+                    <th class="text th">Motivation</th>
+                    <th class="text th">Date</th>
+                    <?php if ($isLoggedIn) : ?>
+                        <th class="text th">Delete</th>
+                    <?php endif; ?>
+                </tr>
+
+                <?php for ($i = 0; $i < count($applications); $i++) : ?>
+                    <?php
+                    $appId = $applications[$i]['id'];
+                    $application = $applications[$i];
+                    ?>
+                    <tr>
+                        <td class="text td"><?= $application['applicant_name'] ?></td>
+                        <td class="text td"><?= $application['applicant_email'] ?></td>
+                        <td class="text td"><?= $application['motivation_letter'] ?></td>
+                        <td class="text td"><?= $application['application_date'] ?></td>
+                        <?php if ($isLoggedIn) : ?>
+                            <td class="text td">
+                                <form action="apply.php" method="get" onsubmit="return confirm('Are you sure you want to delete this application?')">
+                                    <input type="hidden" name="delete_app" value="<?= $appId ?>">
+                                    <button type="submit" class="button-delete">DELETE</button>
+                                </form>
+                            </td>
+                        <?php endif; ?>
+                    </tr>
+                <?php endfor; ?>
+            </table>
         </div>
 
     <?php else : ?>
@@ -106,7 +130,7 @@ function getJobTitle($vacancyId) {
             <h1>Apply for <?= isset($_GET['vacancy_id']) ? htmlspecialchars(getJobTitle($_GET['vacancy_id'])) : 'Job' ?></h1>
 
             <form method="post" class="form">
-            <input type="hidden" name="vacancy_id" value="<?= isset($_GET['vacancy_id']) ? htmlspecialchars($_GET['vacancy_id']) : '' ?>">
+                <input type="hidden" name="vacancy_id" value="<?= isset($_GET['vacancy_id']) ? htmlspecialchars($_GET['vacancy_id']) : '' ?>">
 
                 <label for="applicant_name" class="label">Your Name:</label>
                 <input type="text" name="applicant_name" placeholder="NAME" class="input" required>
