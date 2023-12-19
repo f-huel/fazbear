@@ -1,7 +1,5 @@
 # Fazbear Ent.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
 ## Description
 Backend project for school, with as theme *Five Nights at Freddy's*.
 
@@ -16,7 +14,7 @@ Backend project for school, with as theme *Five Nights at Freddy's*.
 ## Installation
 
 1. Clone the repository:
-- `git clone https://github.com/f-huel/fazbear.git`
+- `git clone git@git.nexed.com:eabe2084-29d7-11ed-81f7-4213e7ee7fac/4a344ac8-886d-4dc6-abf2-a59e00af3159/Almost-there-018b4253-018b4253.git`
 
 2. Install:
 
